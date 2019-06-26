@@ -1,0 +1,64 @@
+{
+    "name": "shapecode/cron-sonata-admin-bundle",
+    "description": "This bundle integrates the cron-bundle in sonata admin.",
+    "keywords": [
+        "cron",
+        "cronjob",
+        "sonata",
+        "admin",
+        "command",
+        "execute",
+        "interval",
+        "schedule",
+        "shapecode",
+        "symfony",
+        "time",
+        "bundle"
+    ],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "homepage": "https://github.com/shapecode/cron-sonata-admin-bundle",
+    "support": {
+        "email": "support@shapeocode.de",
+        "issues": "https://github.com/shapecode/cron-sonata-admin-bundle/issues",
+        "source": "https://github.com/shapecode/cron-sonata-admin-bundle/releases",
+        "wiki": "https://github.com/shapecode/cron-sonata-admin-bundle/wiki"
+    },
+    "authors": [
+        {
+            "name": "Nikita Loges",
+            "homepage": "https://loges.one",
+            "email": "dev@loges.one"
+        }
+    ],
+    "require": {
+        "php": "~7.2",
+
+        "symfony/framework-bundle": "~3.4|~4.0",
+        "symfony/dependency-injection": "~3.4|~4.0",
+        "symfony/http-kernel": "~3.4|~4.0",
+        "symfony/config": "~3.4|~4.0",
+        "shapecode/cron-bundle": "~4.0",
+        "sonata-project/admin-bundle": "~3.50"
+    },
+    "require-dev":{
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Shapecode\\Bundle\\CronAdminBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Shapecode\\Bundle\\CronAdminBundle\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
