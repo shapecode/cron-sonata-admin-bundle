@@ -17,6 +17,9 @@ use Sonata\AdminBundle\Show\ShowMapper;
 class CronjobResultAdmin extends AbstractAdmin
 {
 
+    /** @var string */
+    protected $translationDomain = 'shapecode_cron_sonata_admin';
+
     /**
      * @inheritdoc
      */
@@ -42,17 +45,33 @@ class CronjobResultAdmin extends AbstractAdmin
     {
         unset($this->listModes['mosaic']);
 
-        $listMapper->addIdentifier('id');
-        $listMapper->addIdentifier('cronJob');
-        $listMapper->add('statusCode');
-        $listMapper->add('runAt');
-        $listMapper->add('runTime');
+        $listMapper->addIdentifier('id', 'int', [
+            'label' => 'cronjob.id',
+
+        ]);
+        $listMapper->addIdentifier('cronJob', null, [
+            'label' => 'cronjob.cronjob',
+
+        ]);
+        $listMapper->add('statusCode', 'int', [
+            'label' => 'cronjob.status_code',
+
+        ]);
+        $listMapper->add('runAt', 'datetime', [
+            'label'  => 'cronjob.run_at',
+            'format' => 'd.m.Y H:i P',
+        ]);
+
+        $listMapper->add('runTime', 'int', [
+            'label' => 'cronjob.run_time',
+        ]);
 
         // You may also specify the actions you want to be displayed in the list
         $listMapper->add('_action', null, [
+            'label'   => 'cronjob.action',
             'actions' => [
                 'show' => [],
-            ]
+            ],
         ]);
     }
 
@@ -61,11 +80,24 @@ class CronjobResultAdmin extends AbstractAdmin
      */
     public function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper->add('id');
-        $showMapper->add('cronJob');
-        $showMapper->add('statusCode');
-        $showMapper->add('runAt');
-        $showMapper->add('runTime');
-        $showMapper->add('output');
+        $showMapper->add('id', 'int', [
+            'label' => 'cronjob.id',
+        ]);
+        $showMapper->add('cronJob', null, [
+            'label' => 'cronjob.cronjob',
+        ]);
+        $showMapper->add('statusCode', 'int', [
+            'label' => 'cronjob.status_code',
+        ]);
+        $showMapper->add('runAt', 'datetime', [
+            'label'  => 'cronjob.run_at',
+            'format' => 'd.m.Y H:i P',
+        ]);
+        $showMapper->add('runTime', 'int', [
+            'label' => 'cronjob.run_time',
+        ]);
+        $showMapper->add('output', 'string', [
+            'label' => 'cronjob.output',
+        ]);
     }
 }

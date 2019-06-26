@@ -1,0 +1,18 @@
+cronjob:
+    action: Aktion
+    arguments: Argumente
+    command: Befehl
+    cronjob: CronJob
+    description: Beschreibung
+    enable: Aktiv
+    full_command: Befehl
+    id: ID
+    last_use: Letzter Durchlauf
+    max_instances: Maximale Instanzen
+    next_run: Nächster Start
+    number: Nummer
+    output: Ausgabe
+    period: Periode
+    run_at: Datum
+    run_time: Laufzeit
+    status_code: Status-Code

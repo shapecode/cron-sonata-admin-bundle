@@ -17,6 +17,9 @@ use Sonata\AdminBundle\Show\ShowMapper;
 class CronjobAdmin extends AbstractAdmin
 {
 
+    /** @var string */
+    protected $translationDomain = 'shapecode_cron_sonata_admin';
+
     /**
      * @inheritdoc
      */
@@ -42,21 +45,40 @@ class CronjobAdmin extends AbstractAdmin
     {
         unset($this->listModes['mosaic']);
 
-        $listMapper->addIdentifier('id');
-        $listMapper->addIdentifier('fullCommand');
-        $listMapper->add('number');
-        $listMapper->add('period');
-        $listMapper->add('lastUse');
-        $listMapper->add('nextRun');
-        $listMapper->add('enable', null, [
-            'editable' => true
+        $listMapper->addIdentifier('id', 'int', [
+            'label' => 'cronjob.id',
+        ]);
+        $listMapper->addIdentifier('fullCommand', 'string', [
+            'label' => 'cronjob.full_command',
+        ]);
+        $listMapper->add('number', 'int', [
+            'label' => 'cronjob.number',
+        ]);
+        $listMapper->add('maxInstances', 'int', [
+            'label' => 'cronjob.max_instances',
+        ]);
+        $listMapper->add('period', 'string', [
+            'label' => 'cronjob.period',
+        ]);
+        $listMapper->add('lastUse', 'datetime', [
+            'label'  => 'cronjob.last_use',
+            'format' => 'd.m.Y H:i P',
+        ]);
+        $listMapper->add('nextRun', 'datetime', [
+            'label'  => 'cronjob.next_run',
+            'format' => 'd.m.Y H:i P',
+        ]);
+        $listMapper->add('enable', 'bool', [
+            'label'    => 'cronjob.enable',
+            'editable' => true,
         ]);
 
         // You may also specify the actions you want to be displayed in the list
         $listMapper->add('_action', null, [
+            'label'   => 'cronjob.action',
             'actions' => [
                 'show' => [],
-            ]
+            ],
         ]);
     }
 
@@ -65,14 +87,37 @@ class CronjobAdmin extends AbstractAdmin
      */
     public function configureShowFields(ShowMapper $showMapper)
     {
-        $showMapper
-            ->add('command')
-            ->add('arguments')
-            ->add('description')
-            ->add('number')
-            ->add('enable', 'boolean')
-            ->add('period')
-            ->add('lastUse')
-            ->add('nextRun');
+        $showMapper->add('id', 'int', [
+            'label' => 'cronjob.id',
+        ]);
+        $showMapper->add('command', 'string', [
+            'label' => 'cronjob.command',
+        ]);
+        $showMapper->add('arguments', 'string', [
+            'label' => 'cronjob.arguments',
+        ]);
+        $showMapper->add('description', 'string', [
+            'label' => 'cronjob.description',
+        ]);
+        $showMapper->add('number', 'int', [
+            'label' => 'cronjob.number',
+        ]);
+        $showMapper->add('maxInstances', 'int', [
+            'label' => 'cronjob.max_instances',
+        ]);
+        $showMapper->add('enable', 'boolean', [
+            'label' => 'cronjob.enable',
+        ]);
+        $showMapper->add('period', 'string', [
+            'label' => 'cronjob.period',
+        ]);
+        $showMapper->add('lastUse', 'datetime', [
+            'label'  => 'cronjob.last_use',
+            'format' => 'd.m.Y H:i P',
+        ]);
+        $showMapper->add('nextRun', 'datetime', [
+            'label'  => 'cronjob.next_run',
+            'format' => 'd.m.Y H:i P',
+        ]);
     }
 }
