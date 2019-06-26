@@ -46,12 +46,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Shapecode\\Bundle\\CronAdminBundle\\": "src/"
+            "Shapecode\\Bundle\\CronSonataAdminBundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Shapecode\\Bundle\\CronAdminBundle\\Tests\\": "tests/"
+            "Shapecode\\Bundle\\CronSonataAdminBundle\\Tests\\": "tests/"
         }
     },
     "extra": {

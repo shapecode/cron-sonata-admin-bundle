@@ -1,11 +1,11 @@
 services:
 
-    Shapecode\Bundle\CronBundle\Admin\CronjobAdmin:
+    Shapecode\Bundle\CronSonataAdminBundle\Admin\CronjobAdmin:
         arguments: [~, Shapecode\Bundle\CronBundle\Entity\CronJob, ~]
         tags:
             - { name: sonata.admin, manager_type: orm, label: Cronjobs, group: Cronjobs }
 
-    Shapecode\Bundle\CronBundle\Admin\CronjobResultAdmin:
+    Shapecode\Bundle\CronSonataAdminBundle\Admin\CronjobResultAdmin:
         arguments: [~, Shapecode\Bundle\CronBundle\Entity\CronJobResult, ~]
         tags:
             - { name: sonata.admin, manager_type: orm, label: Results, group: Cronjobs }

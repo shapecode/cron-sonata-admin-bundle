@@ -1,6 +1,6 @@
 <?php
 
-namespace Shapecode\Bundle\CronAdminBundle\DependencyInjection;
+namespace Shapecode\Bundle\CronSonataAdminBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -10,7 +10,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 /**
  * Class ShapecodeCronSonataAdminExtension
  *
- * @package Shapecode\Bundle\CronAdminBundle\DependencyInjection
+ * @package Shapecode\Bundle\CronSonataAdminBundle\DependencyInjection
  * @author  Nikita Loges
  */
 class ShapecodeCronSonataAdminExtension extends Extension

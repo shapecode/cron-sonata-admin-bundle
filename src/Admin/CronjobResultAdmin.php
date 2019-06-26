@@ -1,6 +1,6 @@
 <?php
 
-namespace Shapecode\Bundle\CronAdminBundle\Admin;
+namespace Shapecode\Bundle\CronSonataAdminBundle\Admin;
 
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
@@ -11,7 +11,7 @@ use Sonata\AdminBundle\Show\ShowMapper;
 /**
  * Class CronjobResultAdmin
  *
- * @package Shapecode\Bundle\CronAdminBundle\Admin
+ * @package Shapecode\Bundle\CronSonataAdminBundle\Admin
  * @author  Nikita Loges
  */
 class CronjobResultAdmin extends AbstractAdmin
