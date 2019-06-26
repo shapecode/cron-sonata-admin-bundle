@@ -1,1 +1,0 @@
-cron-sonata-admin-bundle
